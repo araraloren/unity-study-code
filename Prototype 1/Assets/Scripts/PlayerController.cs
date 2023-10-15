@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float forwardInput;
 
+    // Public Variables
+    public Camera horizontalCamera;
+    public Camera verticalCamera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +31,21 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
         // We turn the vehicle
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+
+        bool switchAxis = Input.GetKeyUp(KeyCode.Tab);
+
+        if (switchAxis)
+        {
+            if (!horizontalCamera.enabled)
+            {
+                horizontalCamera.enabled = true;
+                verticalCamera.enabled = false;
+            }
+            else
+            {
+                verticalCamera.enabled = true;
+                horizontalCamera.enabled = false;
+            }
+        }
     }
 }
