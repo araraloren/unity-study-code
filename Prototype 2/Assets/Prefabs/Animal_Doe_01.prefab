@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3632211305974852847}
   - component: {fileID: 4139936142427817394}
   - component: {fileID: -991792517421465772}
+  - component: {fileID: 3437555739875907063}
+  - component: {fileID: 7742954036888841817}
   m_Layer: 0
   m_Name: Animal_Doe_01
   m_TagString: Untagged
@@ -88,6 +90,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4329a2901932aeb4881c440f9f4ec2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3437555739875907063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369929802203855966}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2326453, y: 0.36361325, z: 0.40616256}
+  m_Center: {x: 0.0037383437, y: 0.18388468, z: 0.027763987}
+--- !u!114 &7742954036888841817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369929802203855966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b0e2338ddba1d4195ec80e4152f224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1640141289659635863
