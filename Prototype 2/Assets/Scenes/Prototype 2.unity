@@ -492,9 +492,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83171f1cbfb94d44ebbc2759aa6d2ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   xRange: 20
+  zRange: 6
   projectilePrefab: {fileID: 7495823546523886567, guid: 6743483e8577ac04884be19330d6bf68, type: 3}
+--- !u!65 &824997278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824997274}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.2494128, y: 3.4982553, z: 1}
+  m_Center: {x: 0.03559515, y: 1.2491279, z: 0}
 --- !u!1 &992285705
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +658,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 824997275}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824997278}
   m_SourcePrefab: {fileID: 100100000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
 --- !u!1 &1590138454
 GameObject:
