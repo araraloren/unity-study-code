@@ -25,8 +25,8 @@ public class DestoryOutOfBounds : MonoBehaviour
         }
         else if (transform.position.z < lowerBoundary)
         {
-            Debug.Log("Game Over!");
             Destroy(gameObject);
+            GetComponent<PlayerReference>().DecreaseLives();
         }
         else if (transform.position.x > RightBoundary)
         {

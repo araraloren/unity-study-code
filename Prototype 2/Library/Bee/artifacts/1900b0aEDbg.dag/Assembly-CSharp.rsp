@@ -360,8 +360,12 @@
 "Assets/Challenge 2/Scripts/SpawnManagerX.cs"
 "Assets/Scripts/DestoryOutOfBounds.cs"
 "Assets/Scripts/DetectCollisions.cs"
+"Assets/Scripts/LivesController.cs"
 "Assets/Scripts/MoveForward.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/PlayerInfos.cs"
+"Assets/Scripts/PlayerReference.cs"
+"Assets/Scripts/ScoreController.cs"
 "Assets/Scripts/SpawnManager.cs"
 -langversion:9.0
 

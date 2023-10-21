@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: -1834739845239778212}
   - component: {fileID: 8210033555326604491}
   - component: {fileID: -2272375632261588061}
-  m_Layer: 0
+  - component: {fileID: -7233415130285005659}
+  m_Layer: 6
   m_Name: Animal_Moose_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108844404805379698}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11, y: 0, z: 11}
-  m_LocalScale: {x: 11, y: 11, z: 11}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8599820512173664365}
@@ -45,7 +46,7 @@ Transform:
   - {fileID: 3138364725388613531}
   - {fileID: 2749151503510570302}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5138744887154595473
 Animator:
   serializedVersion: 5
@@ -125,6 +126,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95b0e2338ddba1d4195ec80e4152f224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logGameOver: 0
+--- !u!114 &-7233415130285005659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108844404805379698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad72b612718af6478245b5682867487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInfos: {fileID: 0}
 --- !u!1 &1768458754811787163
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8500288537479938202}
   - component: {fileID: 2489148081270968728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Moose_Female_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4294068066489205340}
   - component: {fileID: 8945213984947268045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Moose_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7143945763340405045}
   - component: {fileID: 2145986958605172465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Moose_Female_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3138364725388613531}
   - component: {fileID: 8919373210397753801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Stag_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7645193000004516281}
   - component: {fileID: 3879109490744065408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Stag_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667769556618348859}
   - component: {fileID: 114226460914784031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Moose_Male_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9047757676960962458}
   - component: {fileID: 5769277979284674356}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Doe_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3867270816631314836}
   - component: {fileID: 6347470342211499866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Moose_Male_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -815,7 +830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2749151503510570302}
   - component: {fileID: 4164174329156577593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Stag_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8599820512173664365}
   - component: {fileID: 6547339964070219198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Doe_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
