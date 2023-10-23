@@ -9,6 +9,11 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Ss]haderCache/
+/[Ss]tateCache/
+/[TtempArtifacts/
+/[Pp]ackageCache/
+/[Cc]achedNodeOutput/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -46,6 +51,8 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.a
+*.o
 
 # Unity3D generated meta files
 *.pidb.meta
