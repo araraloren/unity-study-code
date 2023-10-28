@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private const string JumpTrigger = "Jump_trig";
     private const string DeathBool = "Death_b";
     private const string DeathType = "DeathType_int";
+    private const string Speed = "Speed_f";
 
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
@@ -18,10 +19,12 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip crashSound;
 
+    public bool doubleJump = true;
     public float jumpForce = 10;
     public float gravityModifier = 1;
     public bool isOnGround = true;
     public bool gameOver = false;
+    public bool startAnimation = true;
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +38,32 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isOnGround && Input.GetKeyDown(KeyCode.Space) && !gameOver)
+        if (startAnimation)
+        {
+            if (transform.position.x < 2)
+            {
+                transform.Translate(Vector3.forward * Time.deltaTime * 2);
+            }
+            else
+            {
+                playerAnimator.SetFloat(Speed, 1.0f);
+                startAnimation = false;
+            }
+        }
+        else  if ((isOnGround || doubleJump) && Input.GetKeyDown(KeyCode.Space) && !gameOver)
         {
             playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isOnGround = false;
             playerAnimator.SetTrigger(JumpTrigger);
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
+            if (isOnGround)
+            {
+                isOnGround = false;
+            }
+            else
+            {
+                doubleJump = false;
+            }
         }
     }
 
@@ -52,9 +74,10 @@ public class PlayerController : MonoBehaviour
         if (obj.CompareTag("Ground"))
         {
             isOnGround = true;
+            doubleJump = true;
             dirtParticle.Play();
         }
-        else if (obj.CompareTag("Obstacle"))
+        else if (obj.CompareTag("Obstacle") && !gameOver)
         {
             gameOver = true;
             Debug.Log("Game over!!");

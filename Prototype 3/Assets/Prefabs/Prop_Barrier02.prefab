@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6176364909279573738}
   - component: {fileID: 1795289052329068743}
   - component: {fileID: 8805706442697073232}
+  - component: {fileID: -4159001615835305974}
   m_Layer: 0
   m_Name: Prop_Barrier02
   m_TagString: Obstacle
@@ -82,6 +83,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4159001615835305974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785825363616308502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55323a3c9aa0b545b846dfa45e1a3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
 --- !u!1 &2909068857249275274
 GameObject:
   m_ObjectHideFlags: 0

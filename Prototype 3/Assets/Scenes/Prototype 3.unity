@@ -450,7 +450,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cb22150b5f2434da02555419e08eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 4827529854423966041, guid: a377a06fa18c20241bd8415cea0ac2c9, type: 3}
+  obstaclePrefabs:
+  - {fileID: 1511722746483012101, guid: 08d9c2a669705fa459d4ec8641fc5902, type: 3}
+  - {fileID: 5035578800577167218, guid: 67679ee09ed48af4498c2e778cc87b97, type: 3}
+  - {fileID: 8932472428094922864, guid: aad822c98aaef774bb5aadc612c5a5e8, type: 3}
+  - {fileID: 5885649155765020300, guid: 745d647810bf64c4ca3ecd37b521b747, type: 3}
+  - {fileID: 1785825363616308502, guid: 541b6db8c7214a04f8cb33deabf08c2e, type: 3}
+  - {fileID: 4827529854423966041, guid: a377a06fa18c20241bd8415cea0ac2c9, type: 3}
+  - {fileID: 2606004027806035040, guid: 44c9b0fa4a222d740ac7efca8ed22ea7, type: 3}
+  - {fileID: 4131302503655139810, guid: 967552715d1cb5b47850816ca4c32427, type: 3}
+  - {fileID: 4793792013470232502, guid: 6ef2ca6d68d3f0b49a578cb3bc413015, type: 3}
+  - {fileID: 8399467052490843204, guid: 5d42bd4c4ac7d7f4b92519b2fb14eb19, type: 3}
 --- !u!1 &835818919
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f3f69bcf5a1514c458ed5c9b96f28e34, type: 3}
       propertyPath: m_LocalPosition.y
@@ -875,10 +885,12 @@ MonoBehaviour:
   dirtParticle: {fileID: 1874243183}
   jumpSound: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
   crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
-  jumpForce: 550
-  gravityModifier: 1.4
+  doubleJump: 1
+  jumpForce: 600
+  gravityModifier: 1.6
   isOnGround: 0
   gameOver: 0
+  startAnimation: 1
 --- !u!82 &1976849163
 AudioSource:
   m_ObjectHideFlags: 0
