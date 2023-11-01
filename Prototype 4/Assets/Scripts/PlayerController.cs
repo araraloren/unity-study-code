@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public GameObject focalPoint;
     public GameObject powerupIndicator;
 
+    private Coroutine countDownCoroutine;
+
     public float powerUpTime = 7.0f;
     public float powerUpStrength = 15.0f;
     public bool hasPowerup = false;
@@ -32,9 +34,14 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Powerup"))
         {
+            if (hasPowerup && countDownCoroutine != null)
+            {
+                StopCoroutine(countDownCoroutine);
+            }
             hasPowerup = true;
             powerupIndicator.gameObject.SetActive(true);
             Destroy(other.gameObject);
+            countDownCoroutine = StartCoroutine(PowerupCountdown());
         }
     }
 
@@ -43,6 +50,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(powerUpTime);
         hasPowerup = false;
         powerupIndicator.gameObject.SetActive(false);
+        countDownCoroutine = null;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -55,7 +63,6 @@ public class PlayerController : MonoBehaviour
             var awayFromPlayer = enemy.transform.position - transform.position;
 
             rigidbody.AddForce(awayFromPlayer * powerUpStrength, ForceMode.Impulse);
-            StartCoroutine(PowerupCountdown());
             Debug.Log("Collision with " + collision.gameObject.name);
         }
     }

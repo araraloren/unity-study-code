@@ -9,12 +9,14 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody enemyRigidbody;
     private GameObject player;
+    private SpawnManager spawnManager;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRigidbody = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
+        spawnManager = GameObject.FindObjectOfType<SpawnManager>();
     }
 
     // Update is called once per frame
@@ -23,5 +25,11 @@ public class Enemy : MonoBehaviour
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
 
         enemyRigidbody.AddForce(lookDirection * speed);
+
+        if (transform.position.y < -5)
+        {
+            Destroy(gameObject);
+            spawnManager.enemyCount--;
+        }
     }
 }
