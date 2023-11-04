@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         float forwardInput = Input.GetAxis("Vertical");
 
         playerRigidbody.AddForce(focalPoint.transform.forward * forwardInput * speed);
+        powerupIndicator.transform.position = new Vector3(transform.position.x, powerupIndicator.transform.position.y, transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)
