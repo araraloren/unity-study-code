@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &53701624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c51836975f82b34698c1c5bca1beac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7253483671987682536, guid: 33449d4092a06b94281d51469157af4b, type: 3}
+  enemyPrefabs:
+  - {fileID: 7253483671987682536, guid: 33449d4092a06b94281d51469157af4b, type: 3}
+  - {fileID: 7253483671987682536, guid: 9339f31ee5d31f74a95abe9d41a95211, type: 3}
   powerUpPrefab: {fileID: 2494324730581538161, guid: 79ffb7c36dadff04f91b3d7f6a4fcc6e, type: 3}
+  bulletPrefab: {fileID: 7864057626163573513, guid: c9be4e38aad38b047ad936b5fea27787, type: 3}
   enemyCount: 0
   waveNumber: 1
 --- !u!4 &53701625
@@ -630,7 +633,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 49b7224008ec1d64c925bdef262095c4, type: 2}
+  - {fileID: 2100000, guid: 4c97b24d72ebade4d98acaf3b75c90ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -688,11 +691,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  bulletCount: 6
   focalPoint: {fileID: 1941188440}
   powerupIndicator: {fileID: 1808942826}
+  bulletObject: {fileID: 7253483671987682536, guid: 3c1e13f11543c4d4c8ed68a622f5a78b, type: 3}
   powerUpTime: 7
   powerUpStrength: 15
   hasPowerup: 0
+  hasBullet: 0
 --- !u!1001 &1808942825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -707,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1887969965315444, guid: 1656aec7f2b3ffe45a91801f58b00253, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4740640696147648, guid: 1656aec7f2b3ffe45a91801f58b00253, type: 3}
       propertyPath: m_LocalScale.x

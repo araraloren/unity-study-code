@@ -59,6 +59,10 @@ public class PalyerController : MonoBehaviour
         {
             ChangeDirection();
         }
+        else if (obj.CompareTag("Enemy"))
+        {
+            Debug.Log("Game over ...");
+        }
     }
 
     /// <summary>

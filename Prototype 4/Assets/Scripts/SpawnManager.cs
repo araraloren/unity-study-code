@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
     public GameObject powerUpPrefab;
+    public GameObject bulletPrefab;
 
     public int enemyCount = 0;
     public int waveNumber = 1;
@@ -23,9 +24,18 @@ public class SpawnManager : MonoBehaviour
     {
         if (enemyCount == 0)
         {
+            var val = Random.Range(0, 2.0f);
+
             enemyCount += waveNumber;
             Debug.Log("spawn new enemy wave and new power up");
-            SpawnPowerUpWave();
+            if (val > 1.0f)
+            {
+                SpawnPowerUpWave();
+            }
+            else
+            {
+                SpawnBulletWave();
+            }
             SpawnEnemyWave(waveNumber++);
         }
     }
@@ -34,13 +44,20 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0;i < enemiesToSpawn; i++)
         {
-            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+            var j = Random.Range(0, enemyPrefabs.Length);
+
+            Instantiate(enemyPrefabs[j], GenerateSpawnPosition(), enemyPrefabs[j].transform.rotation);
         }
     }
 
     void SpawnPowerUpWave()
     {
-        Instantiate(powerUpPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+        Instantiate(powerUpPrefab, GenerateSpawnPosition(), powerUpPrefab.transform.rotation);
+    }
+
+    void SpawnBulletWave()
+    {
+        Instantiate(bulletPrefab, GenerateSpawnPosition(), bulletPrefab.transform.rotation);
     }
 
     private Vector3 GenerateSpawnPosition()
