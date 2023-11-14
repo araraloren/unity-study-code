@@ -146,10 +146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026175a1538c62746bf45d0c21c355cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionParticleSystem: {fileID: 7535607469619513247, guid: ac10190cf200c4f7e881ca8e41d3d760, type: 3}
+  score: 5
   minForce: 14
   maxForce: 17
   minTorque: -10
   maxTorque: 10
   minTargetX: -4.5
   maxTargetX: 4.5
-  targetY: -6
+  targetY: -5

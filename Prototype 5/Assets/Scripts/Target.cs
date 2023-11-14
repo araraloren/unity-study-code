@@ -5,6 +5,11 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private Rigidbody targetRigibody;
+    private GameManager gameManager;
+
+    public ParticleSystem explosionParticleSystem;
+
+    public int score = 5;
 
     public float minForce = 12.0f;
     public float maxForce = 16.0f;
@@ -20,6 +25,7 @@ public class Target : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindFirstObjectByType<GameManager>();
         targetRigibody = GetComponent<Rigidbody>();
 
         targetRigibody.AddForce(RandomForce(), ForceMode.Impulse);
@@ -36,11 +42,20 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
+        if (gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            Instantiate(explosionParticleSystem, transform.position, explosionParticleSystem.transform.rotation);
+            gameManager.UpdateScore(score);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!gameObject.CompareTag("Bad"))
+        {
+            gameManager.GameOver();
+        }
         Destroy(gameObject);
     }
 
